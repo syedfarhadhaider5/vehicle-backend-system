@@ -1,0 +1,108 @@
+{
+  "name": "auto-center-yii2/app",
+  "description": "Auto Center",
+  "keywords": [
+    "yii2",
+    "framework",
+    "start",
+    "cms",
+    "application template",
+    "yii2 advanced"
+  ],
+  "authors": [
+    {
+      "name": "Ali Assad",
+      "email": "aassad@autocenter.com"
+    }
+  ],
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=7.1.0",
+    "ext-gd": "*",
+    "yiisoft/yii2": "^2.0.13",
+    "yiisoft/yii2-swiftmailer": "^2.0.0",
+    "yiisoft/yii2-authclient": "^2.0.0",
+    "yiisoft/yii2-bootstrap4": "^2.0",
+    "yiisoft/yii2-jui": "^2.0.0",
+    "yiisoft/yii2-debug": "^2.0.0",
+    "yii2-starter-kit/yii2-file-kit": "^2.1.0",
+    "asofter/yii2-imperavi-redactor": ">=0.0.3@dev",
+    "trntv/yii2-aceeditor": "^2.0",
+    "trntv/probe": "^1.0",
+    "trntv/yii2-glide": "^1.2",
+    "trntv/yii2-datetime-widget": "dev-master@dev",
+    "trntv/cheatsheet": "^0.1@dev",
+    "trntv/yii2-command-bus": "^3.0",
+    "intervention/image": "^2.1",
+    "vlucas/phpdotenv": "^5.3.0",
+    "almasaeed2010/adminlte": "^3.0",
+    "npm-asset/font-awesome": "^5.0",
+    "npm-asset/html5shiv": "^3.0",
+    "npm-asset/jquery-slimscroll": "^1.3",
+    "npm-asset/flot": "^3.2",
+    "symfony/process": "^4.0",
+    "guzzlehttp/guzzle": "^6.0",
+    "alexantr/yii2-elfinder": "^1.3",
+    "trntv/sitemaped": "^0.1",
+    "yii2mod/yii2-swagger": "^1.1",
+    "rmrevin/yii2-fontawesome": "^3.4",
+    "kartik-v/yii2-widgets": "^3.4",
+    "kartik-v/yii2-detail-view": "*",
+    "kartik-v/yii2-grid": "@dev",
+    "kartik-v/yii2-bootstrap4-dropdown": "@dev",
+    "bizley/migration": "^4.0",
+    "kartik-v/yii2-widget-fileinput": "@dev",
+    "edofre/yii2-marker-clusterer": "v1.0.1",
+    "2amigos/yii2-google-maps-library" : "*",
+    "kartik-v/yii2-date-range": "dev-master",
+    "kartik-v/yii2-sortable-input": "dev-master",
+    "kartik-v/yii2-sortable": "dev-master"
+
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "^2.0.0",
+    "yiisoft/yii2-faker": "^2.0.0",
+    "codeception/codeception": "2.4.0",
+    "codeception/verify": "^0.3.1"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/"
+    }
+  },
+  "suggest": {
+    "trntv/yii2-debug-xhprof": "dev-master@dev"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "archive": {
+    "exclude": ["docs"]
+  },
+  "scripts": {
+    "compile": [
+      "cp deploy/heroku/.env .env",
+      "YII_ENV=heroku php console/yii migrate/fresh --interactive=0",
+      "php console/yii app/setup --interactive=0"
+    ],
+    "build:env": [
+      "cp .env.dist .env"
+    ],
+    "build:app": [
+      "@composer install --prefer-dist -o",
+      "echo 'waiting for mysql' && sleep 10",
+      "php console/yii app/setup --interactive=0"
+    ]
+  }
+}

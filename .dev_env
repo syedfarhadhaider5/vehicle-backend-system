@@ -1,0 +1,61 @@
+# Framework
+# ---------
+YII_DEBUG=true
+YII_ENV=dev
+APP_MAINTENANCE=0
+
+# Application
+# -----------
+LINK_ASSETS=true
+
+# Databases
+# ---------
+DB_DSN=mysql:host=127.0.0.1;;port=3306;dbname=auto-center-db
+DB_USERNAME=adminuser
+DB_PASSWORD=aliassad110
+DB_TABLE_PREFIX=
+DB_CHARSET=utf8mb4
+
+TEST_DB_DSN=mysql:host=localhost;port=3306;dbname=auto-center-db-test
+TEST_DB_USERNAME=root
+TEST_DB_PASSWORD=root
+
+# Urls
+# ----
+API_HOST_INFO=http://api.admin.autocenter.com
+FRONTEND_HOST_INFO=http://localhost/autocenter-yii2/frontend/web
+BACKEND_HOST_INFO=http://dev.admin.autocenter.com
+STORAGE_HOST_INFO=http://storage.admin.autocenter.com
+
+# Single domain example
+# ----
+#FRONTEND_HOST_INFO=http://auto-center.localhost
+#FRONTEND_BASE_URL=/
+#BACKEND_HOST_INFO=http://auto-center.localhost
+#BACKEND_BASE_URL=/backend/web
+#STORAGE_HOST_INFO=http://auto-center.localhost
+#STORAGE_BASE_URL=/storage/web
+
+
+# Other
+# -----
+SMTP_HOST=mailcatcher
+SMTP_PORT=1025
+
+FRONTEND_COOKIE_VALIDATION_KEY=k_G3SpB_UbEfhdkx6J2ATwcS_ItP1_kC
+BACKEND_COOKIE_VALIDATION_KEY=-Km2euWgwMJaqfvT6XujJymSdXV014rf
+
+ADMIN_EMAIL=admin@auto-center.localhost
+ROBOT_EMAIL=robot@auto-center.localhost
+
+GITHUB_CLIENT_ID=your-client-id
+GITHUB_CLIENT_SECRET=your-client-secret
+
+GLIDE_SIGN_KEY=-0ti--r-SWLvBzqlavpSr37lVBJHn6zB
+GLIDE_MAX_IMAGE_SIZE=4000000
+
+# To resolve "Invalid volumes",For Toolbox. (https://github.com/docker/toolbox/issues/607)
+COMPOSE_CONVERT_WINDOWS_PATHS=1
+
+# Config for Docker for Mac
+#XDEBUG_CONFIG = "remote_connect_back=0 remote_host=host.docker.internal"
